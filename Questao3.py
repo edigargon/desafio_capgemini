@@ -39,3 +39,108 @@ ola
 mun
 do
 '''
+
+# Preparando os dados
+import math
+
+matriz = []
+i = 0
+j = 1
+
+#Recendo o texto
+text = input('Nos forneça uma frase: ')
+
+#Remover os espaços do texto
+text_sem_espaco = text.replace(" ", "")
+
+#Transformando em um grid
+tamanho = len(text_sem_espaco)
+#print(tamanho)
+raizquadrada = math.sqrt(tamanho)
+#print(raizquadrada)
+#Verificar se número é float ou int
+inteiro = int(raizquadrada)
+#Transformando o texto em uma lista
+text_lis = list(text_sem_espaco)
+#print(text_lis)
+
+if raizquadrada == inteiro:
+    for i in range(inteiro):
+        matriz.append([0]*inteiro)
+
+    # Criptografando
+    if inteiro == 1:
+        matriz[0][0] = text_lis[0]
+    elif inteiro == 2:
+        matriz[0][0] = text_lis[0]
+        matriz[0][1] = text_lis[2]
+        matriz[1][0] = text_lis[1]
+        matriz[1][1] = text_lis[3]
+    elif inteiro == 3:
+        matriz[0][0] = text_lis[0]
+        matriz[0][1] = text_lis[3]
+        matriz[0][2] = text_lis[6]
+        matriz[1][0] = text_lis[1]
+        matriz[1][1] = text_lis[4]
+        matriz[1][2] = text_lis[7]
+        matriz[2][0] = text_lis[2]
+        matriz[2][1] = text_lis[5]
+        matriz[2][2] = text_lis[8]
+    elif inteiro == 4:
+        matriz[0][0] = text_lis[0]
+        matriz[0][1] = text_lis[4]
+        matriz[0][2] = text_lis[8]
+        matriz[0][3] = text_lis[12]
+        matriz[1][0] = text_lis[1]
+        matriz[1][1] = text_lis[5]
+        matriz[1][2] = text_lis[9]
+        matriz[1][3] = text_lis[13]
+        matriz[2][0] = text_lis[2]
+        matriz[2][1] = text_lis[6]
+        matriz[2][2] = text_lis[10]
+        matriz[2][3] = text_lis[14]
+        matriz[3][0] = text_lis[3]
+        matriz[3][1] = text_lis[7]
+        matriz[3][2] = text_lis[11]
+        matriz[3][3] = text_lis[15]
+else:
+    for i in range(inteiro+1):
+        matriz.append([''] * (inteiro+1))
+
+    # Criptografando
+    if inteiro+1 == 1:
+        matriz[0][0] = text_lis[0]
+    elif inteiro+1 == 2:
+        matriz[0][0] = text_lis[0]
+        matriz[0][1] = text_lis[1]
+        matriz[1][0] = text_lis[2]
+        matriz[1][1] = text_lis[3]
+    elif inteiro+1 == 3:
+        matriz[0][0] = text_lis[0]
+        matriz[0][1] = text_lis[3]
+        matriz[0][2] = text_lis[6]
+        matriz[1][0] = text_lis[1]
+        matriz[1][1] = text_lis[4]
+        matriz[1][2] = text_lis[7]
+        matriz[2][0] = text_lis[2]
+        matriz[2][1] = text_lis[5]
+        #matriz[2][2] = text_lis[8]
+    elif inteiro+1 == 4:
+        matriz[0][0] = text_lis[0]
+        matriz[0][1] = text_lis[4]
+        matriz[0][2] = text_lis[8]
+        matriz[0][3] = text_lis[12]
+        matriz[1][0] = text_lis[1]
+        matriz[1][1] = text_lis[5]
+        matriz[1][2] = text_lis[9]
+        #matriz[1][3] = text_lis[13]
+        matriz[2][0] = text_lis[2]
+        matriz[2][1] = text_lis[6]
+        matriz[2][2] = text_lis[10]
+        #matriz[2][3] = text_lis[14]
+        matriz[3][0] = text_lis[3]
+        matriz[3][1] = text_lis[7]
+        #matriz[3][2] = text_lis[11]
+        #matriz[3][3] = text_lis[15]
+
+print(matriz)
